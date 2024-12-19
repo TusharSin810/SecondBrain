@@ -1,11 +1,11 @@
 import express from "express"
 import jwt from "jsonwebtoken"
-import { UserModel } from "./db";
+import { ContentModel, UserModel } from "./db";
+import { JWT_PASSWORD } from "./config";
+import { userMiddleware } from "./middleware";
 
 const app = express();
 const port = 3000;
-const JWT_PASSWORD = "Tushar810";
-
 
 app.post("/api/v1/signup", async (req, res) => {
     //ZOD Validation
@@ -45,17 +45,56 @@ app.post("/api/v1/signin", async (req, res) => {
         }) 
     }else{
         res.status(403).json({
-            message: "Iccorect Credentials"
+            message: "Incorrect Credentials"
         })
     }
 })
 
-app.post("/api/v1/content", (req, res) => {
+app.post("/api/v1/content",userMiddleware, async (req, res) => {
+    const link = req.body.link;
+    const type = req.body.type;
     
+    await ContentModel.create({
+        link,
+        type,
+        //@ts-ignore
+        userId: req.userId,
+        tags: []
+    })
+
+    res.json({
+        message: "Content Added"
+    })
 })
 
-app.get("/api/v1/content", (req, res) => {
-    
+app.get("/api/v1/content", userMiddleware, async (req, res) => {
+    //@ts-ignore
+    const userId = req.userId;
+    const content = await ContentModel.find({
+        userId: userId
+    }).populate("userId")
+    res.json({
+        content
+    })
+})
+
+app.delete("/api/v1/content", userMiddleware, async (req, res) => {
+    const contentId = req.body.contentId;
+
+    await ContentModel.deleteMany({
+        contentId,
+        //@ts-ignore
+        userId: req.userId
+    })
+
+})
+
+app.post("/api/v1/brain/share", (req, res) => {
+        
+})
+
+app.get("/api/v1/brain/:shareLink", (req, res) => {
+        
 })
 
 
