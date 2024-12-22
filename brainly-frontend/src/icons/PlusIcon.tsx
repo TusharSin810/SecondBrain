@@ -1,4 +1,4 @@
-import {IconProps, iconSizeVariants} from "./index"
+import {IconProps, iconSizeVariants} from "."
 
 export const PlusIcon = (props: IconProps) =>{ 
 return(
