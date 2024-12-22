@@ -1,11 +1,11 @@
 import express from "express"
 import jwt from "jsonwebtoken"
 import { ContentModel, UserModel } from "./db";
-import { JWT_PASSWORD } from "./config";
+import { config } from "./config";
 import { userMiddleware } from "./middleware";
 
 const app = express();
-const port = 3000;
+const port = config.port;
 
 app.post("/api/v1/signup", async (req, res) => {
     //ZOD Validation
@@ -39,7 +39,7 @@ app.post("/api/v1/signin", async (req, res) => {
     if(userexist){
         const token = jwt.sign({
             id: userexist._id
-        }, JWT_PASSWORD)
+        }, config.jwtSecret)
         res.json({
             token
         }) 

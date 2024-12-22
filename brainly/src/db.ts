@@ -1,6 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
+import { config } from "./config";
 
-mongoose.connect("")
+mongoose.connect(config.dbConnection);
 
 const UserSchema = new Schema({
     username: {type: String, unique: true},
