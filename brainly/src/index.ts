@@ -110,9 +110,8 @@ app.post("/api/v1/brain/share", userMiddleware, async (req, res) => {
 })
 
 app.get("/api/v1/brain/:shareLink", (req, res) => {
-        
-})
 
+})
 
 app.listen(port , () => {
     console.log(`Listening on Port : ${port}`);
