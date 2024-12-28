@@ -11,10 +11,13 @@ function App() {
 
   return (
     <>
-      <div className='text-purple-700'>
-          Brainly - Second Brain App For Storing UseFull Links 
-        <Button variant='primary' text='Add Content' size='sm' startIcon={<PlusIcon size='md' />} onClick={hi}/>
-        <Button variant='secondary' text='Share Link' size='md' onClick={hi} endIcon={<ShareIcon size='md'/>}/>
+      <div className='text-purple-700 flex justify-between px-4 py-2'>
+          Brainly - Second Brain App For Storing UseFull Links
+        <div className='flex gap-1'>
+          <Button variant='primary' text='Add Content' size='sm' startIcon={<PlusIcon size='md' />} onClick={hi}/>
+          <Button variant='secondary' text='Share Link' size='sm' onClick={hi} endIcon={<ShareIcon size='md'/>}/>
+        </div> 
+
       </div>
     </>
   )
