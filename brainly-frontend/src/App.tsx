@@ -10,7 +10,7 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <div className='text-purple-700 flex justify-between px-4 py-2'>
           Brainly - Second Brain App For Storing UseFull Links
         <div className='flex gap-1'>
@@ -19,7 +19,10 @@ function App() {
         </div> 
 
       </div>
-    </>
+      <div>
+        PlaceHolder Text
+      </div>
+    </div>
   )
 }
 
