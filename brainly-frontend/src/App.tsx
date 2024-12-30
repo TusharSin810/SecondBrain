@@ -6,7 +6,7 @@ import { ShareIcon } from './icons/ShareIcon'
 function App() {
   
   function hi(){
-    console.log("Hello There")
+    alert("Welcome To Second Brain")
   }
 
   return (
