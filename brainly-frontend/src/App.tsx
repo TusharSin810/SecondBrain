@@ -19,7 +19,7 @@ function App() {
         </div> 
 
       </div>
-      <div>
+    <div className='flex w-screen justify-center h-screen items-center bg-neutral-300'>
         PlaceHolder Text
       </div>
     </div>
