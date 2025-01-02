@@ -20,7 +20,7 @@ function App() {
 
       </div>
     <div className='flex w-screen justify-center h-screen items-center bg-neutral-300'>
-        PlaceHolder Text
+        PlaceHolder Text - This is the main body of the app which will be having a set of cards displaying the links and their small preview
       </div>
     </div>
   )
