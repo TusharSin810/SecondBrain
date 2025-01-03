@@ -19,9 +19,14 @@ function App() {
         </div> 
 
       </div>
-    <div className='flex w-screen justify-center h-screen items-center bg-neutral-300'>
-        PlaceHolder Text - This is the main body of the app which will be having a set of cards displaying the links and their small preview
-      </div>
+    <div className='w-screen h-screen bg-neutral-300 flex'>
+        <div className='bg-neutral-500 h-52 w-56 m-8'>
+            Image
+        </div>
+        <div className='bg-neutral-500 h-52 w-56 m-8'>
+            Image
+        </div>
+    </div>
     </div>
   )
 }
