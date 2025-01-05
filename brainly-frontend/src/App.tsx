@@ -26,6 +26,12 @@ function App() {
         <div className='bg-neutral-500 h-52 w-56 m-8'>
             Image
         </div>
+            <div className='bg-neutral-500 h-52 w-56 m-8'>
+            Image
+        </div>
+        <div className='bg-neutral-500 h-52 w-56 m-8'>
+            Image
+        </div>
     </div>
     </div>
   )
