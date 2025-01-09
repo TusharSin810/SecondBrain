@@ -32,6 +32,12 @@ function App() {
               This is the Placeholder Text For the Card
             </p>
         </div>
+      <div className='bg-neutral-500 h-52 w-56 m-8'>
+            Image
+            <p>
+              This is the Placeholder Text For the Card
+            </p>
+      </div>
     </div>
     </div>
   )
